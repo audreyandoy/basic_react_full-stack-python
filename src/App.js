@@ -2,9 +2,10 @@ import './App.css';
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import UserList from './components/UserList.js';
+import Login from "./components/Login";
+import Logout from "./components/Logout";
 
-const api_url = "http://localhost:5000/api/user";
-
+const api_url = "http://localhost:5000/api/users";
 
 function App() {
   const [userData, setUserData] = useState([]);
@@ -21,16 +22,25 @@ function App() {
     })
   }, []);
 
+  // function Login() {
+  //   const onSuccess = (res) => {
+  //     console.log('[Login Success] currentUser', res.profileObj);
+  //   };
+
+  //   const onFailure = (res) => {
+  //     console.log('[Login Failed] res:', res);
+  //   }
+  // }
+
   return (
-    <div className="App">
       <section>
         <div>
+          <Login /> 
+          <Logout />
           <UserList users={userData}>
           </UserList>
         </div>
       </section>
-
-    </div>
   );
 }
 
