@@ -1,15 +1,35 @@
 import React from "react";
+import axios from "axios";
 import { GoogleLogin } from 'react-google-login';
 
 const clientId = '415751135697-3pkh803j85i6gpth64lnbjc99i1bevbk.apps.googleusercontent.com'
-
+const api_url = "http://localhost:5000/api/users";
 
 function Login() {
     const onSuccess = (res) => {
       console.log('[Login Success] currentUser', res.profileObj);
 
       refreshTokenSetup(res);
-    };
+
+      axios.post('http://localhost:5000/login', 
+      {
+        'Access-Control-Allow-Origin': '*'
+      },
+      {
+        firstName: 'Finn',
+        lastName: 'Williams'
+      })
+      .then((response) => {
+        console.log(response);
+      }, (error) => {
+        console.log(error);
+      });
+
+
+      }
+
+
+   
 
     const onFailure = (res) => {
       console.log('[Login Failed] res:', res);
