@@ -2,16 +2,17 @@ import React from 'react';
 import './UserList.css';
 
 
-const UserList = ({users}) => {
+const UserList = ({user}) => {
    
    return (
-       <div class="block">
-        {users.map((user, index) => (
+       <div className="block">
+           
+        {/* {user.map((user, index) => (
             <div key={index}>
-                <h1 className="user">{user.first_name}</h1>
+                <h1 className="user">{user.name}</h1>
             </div>
            
-        ))}
+        ))} */}
        </div>
    )
     
