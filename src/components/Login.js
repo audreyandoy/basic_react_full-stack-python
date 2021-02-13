@@ -21,10 +21,10 @@ const Login = ({ setUser }) => {
                 data: data
             })
             .then((res) => {
-                setUser(res.data.user);
+                setUser(res.data["data"]);
                 console.log("hello");
-                console.log(res);
-                navigate(res.data);
+                console.log(res.data);
+                navigate(res.data["route"]);
             }, (error) => {
                 console.log(error);
             });

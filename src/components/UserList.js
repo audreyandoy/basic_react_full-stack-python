@@ -4,15 +4,12 @@ import './UserList.css';
 
 const UserList = ({user}) => {
    
+    console.log(user)
    return (
        <div className="block">
            
-        {/* {user.map((user, index) => (
-            <div key={index}>
-                <h1 className="user">{user.name}</h1>
-            </div>
-           
-        ))} */}
+        <h1>{user} is logged in! </h1>
+     
        </div>
    )
     
